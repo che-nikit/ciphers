@@ -3,30 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=windows-1251">
   <title>Шифр Цезаря</title>
-  <script type="text/javascript">
-function caesar_code(a) {
-    var c = document.getElementById("b_text1"),
-        g = document.getElementById("b_text2"),
-		d = document.getElementById("b_text3").value,
-		b = " !.,?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
-        e = "",
-		f,flag=0;
-	c = c.value;
-	if(d.charAt(0) == '-')
-	{
-		flag = 1;
-		d = d.substr(1);
-	}
-	d = d % b.length || 0;
-	if(flag == 1)
-		d = b.length - d;
-	
-	f = b.substr(d) + b.substr(0, d);
-	1 == a && (a = b, b = f, f = a);
-	for (i = 0; i < c.length; i++) a = b.lastIndexOf(c.charAt(i)), a = f.charAt(a) || c.charAt(i), e += a;
-	g.value = e
-};
-  </script>
+  <script src="cez_script.js"></script>
 </head>
 <body>
   <br>
@@ -44,8 +21,8 @@ function caesar_code(a) {
 	Введите величину сдвига
 	<input id="b_text3" type="text" size="10"><br>
 	<br>
-    <input onclick="caesar_code(0)" type="button" value="Шифровать">
-    <input onclick="caesar_code(1)" type="button" value="Дешифровать">
+    <input onclick="main(0)" type="button" value="Шифровать">
+    <input onclick="main(1)" type="button" value="Дешифровать">
     <br>
     <br>
     <br>
